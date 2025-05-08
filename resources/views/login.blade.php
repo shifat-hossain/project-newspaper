@@ -97,7 +97,17 @@
 								<div class="kt-login__head">
 									<h3 class="kt-login__title">Sign In To Admin</h3>
 								</div>
-								<form class="kt-form" action="">
+								@if ($errors->any())
+									<div class="alert alert-danger">
+										<ul>
+											@foreach ($errors->all() as $error)
+												<li>{{ $error }}</li>
+											@endforeach
+										</ul>
+									</div>
+								@endif
+								<form class="kt-form" action="{{ route('login.store') }}" method="POST">
+									@csrf
 									<div class="input-group">
 										<input class="form-control" type="text" placeholder="Email" name="email" autocomplete="off">
 									</div>
@@ -125,9 +135,10 @@
 									<h3 class="kt-login__title">Sign Up</h3>
 									<div class="kt-login__desc">Enter your details to create your account:</div>
 								</div>
-								<form class="kt-form" action="">
+								<form class="kt-form" action="{{ route('register.store') }}" method="POST">
+									@csrf
 									<div class="input-group">
-										<input class="form-control" type="text" placeholder="Fullname" name="fullname">
+										<input class="form-control" type="text" placeholder="Fullname" name="name">
 									</div>
 									<div class="input-group">
 										<input class="form-control" type="text" placeholder="Email" name="email" autocomplete="off">
@@ -136,7 +147,7 @@
 										<input class="form-control" type="password" placeholder="Password" name="password">
 									</div>
 									<div class="input-group">
-										<input class="form-control" type="password" placeholder="Confirm Password" name="rpassword">
+										<input class="form-control" type="password" placeholder="Confirm Password" name="password_confirmation">
 									</div>
 									<div class="row kt-login__extra">
 										<div class="col kt-align-left">
@@ -148,7 +159,7 @@
 										</div>
 									</div>
 									<div class="kt-login__actions">
-										<button id="kt_login_signup_submit" class="btn btn-brand btn-elevate kt-login__btn-primary">Sign Up</button>&nbsp;&nbsp;
+										<button id="" class="btn btn-brand btn-elevate kt-login__btn-primary">Sign Up</button>&nbsp;&nbsp;
 										<button id="kt_login_signup_cancel" class="btn btn-light btn-elevate kt-login__btn-secondary">Cancel</button>
 									</div>
 								</form>
