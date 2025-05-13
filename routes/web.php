@@ -8,5 +8,5 @@ Route::get('/login', function () {
 
 
 Route::get('/admin/dashboard', function () {
-    return view('dashboard');
+    return view('admin/dashboard');
 })->name('admin.dashboard')->middleware('auth');
