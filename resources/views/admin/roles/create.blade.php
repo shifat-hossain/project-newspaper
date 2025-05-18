@@ -28,12 +28,10 @@
             <form action="{{ route('admin.roles.store') }}" method="POST">
                 @csrf
 
-                <div class="mb-3 row">
-                    <label for="staticEmail" class="col-sm-2 col-form-label">Name</label>
-                    <div class="col-sm-10">
-                        <input type="text" name="name" class="form-control mb-2" required>
-                    </div>
-                </div>
+                 <x-forms.field class="col-12">
+                    <x-forms.label name="name" class="form-label"/>
+                    <x-forms.input name='name' value="{{ old('name') }}"/>
+                 </x-forms.field>
     
                 @foreach (config('permissions.groups') as $groupKey => $group)
                     <div class="d-flex flex-column mb-3">
