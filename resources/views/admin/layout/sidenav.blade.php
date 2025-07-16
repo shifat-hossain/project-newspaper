@@ -65,7 +65,7 @@
     <div class="collapse" id="role_permission" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
         <nav class="sb-sidenav-menu-nested nav">
             <a class="nav-link" href="{{ route('admin.roles.index') }}">
-                All Role
+                All Roles
             </a>
         </nav>
     </div>
