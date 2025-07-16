@@ -18,6 +18,11 @@
                     <div class="sb-sidenav-menu">
                         @include('admin.layout.sidenav')
                     </div>
+
+                    <div class="sb-sidenav-footer">
+                        <div class="small">Logged in as:</div>
+                        Start Bootstrap
+                    </div>
                 </nav>
             </div>
             <div id="layoutSidenav_content">
