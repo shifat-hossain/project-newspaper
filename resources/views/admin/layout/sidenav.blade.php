@@ -67,6 +67,7 @@
             <a class="nav-link" href="{{ route('admin.roles.index') }}">
                 Role
             </a>
+            
         </nav>
     </div>
 </div>
